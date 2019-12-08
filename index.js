@@ -18,11 +18,11 @@ app.use(express.urlencoded({
   extended: false
 }));
 // Homepage Route
-app.get('/', (req, res) => res.render('index', {
-  title: 'Member App',
-  members
-}));
-
+// app.get('/', (req, res) => res.render('index', {
+//   title: 'Member App',
+//   members
+// }));
+app.get('/', (req, res) => res.json(members));
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
